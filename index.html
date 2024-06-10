@@ -18,9 +18,10 @@
        justify-content: center;
        height: auto;
        margin: 0;
+       flex-direction: column;
      }
     #container{
-      display: flex;
+      display: grid;
       flex-wrap: wrap;
       width: 960px;
       height: 960px;
@@ -29,13 +30,13 @@
 
     .grid-item{
       flex: 1 0 calc(100% / 16);
-      height: calc(960px / 16);
+      height: calc(100% / 16);
       box-sizing: border-box;
       border: 1px solid #ccc;
     }
     #resetButton{
       margin-right: 50px;
-      height: 50px;
+      height: 100px;
       width: 150px;
     }
     
@@ -45,8 +46,8 @@
   <script>
     function makeGrid(size) {
       container.innerHTML = '';
-      container.style.gridColumns = `repeat(${size}, 1fr)`;
-      container.style.gridRows = `repeat(${size}, 1fr)`;
+      container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+      container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
       const size2X = size * size;
 
